@@ -1,3 +1,4 @@
+//program to insert element at the end of array
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
@@ -7,7 +8,7 @@ int main(void)
     int a[max],i,j;
     printf("\n Enter the Limit");
     scanf("%d",&j);
-    if (j>=max)
+    if (j>=max) //checking if the array is not completely full
     {
         printf("\n array size doen'nt fulfill demand");
         exit(0);
