@@ -1,11 +1,12 @@
+//program to show Circular Queue 
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
-#define max 5
+#define max 10
 int front=-1,rear=-1,q[max];
-void insert(void);
-void delete(void);
-void travser(void);
+void insert(void); //funtion to intsert
+void delete(void); //funtion to delete elment
+void travers(void); // funtion to travers the element in queue
 
 void main()
 {
@@ -14,7 +15,7 @@ void main()
     {
         printf("\n1. insert");
         printf("\n2. delete");
-        printf("\n3. travser");
+        printf("\n3. travers");
         printf("\n4. exit");
         printf("\n enter your choice :");
         scanf("%d",&ch);
@@ -22,7 +23,7 @@ void main()
         {
         case 1: insert();  break;
         case 2: delete();  break;
-        case 3: travser(); break;
+        case 3: travers(); break;
         case 4: exit (0);    break;
         default: printf("\ninvlid choice");
             break;
@@ -30,13 +31,13 @@ void main()
     }
 }
 
-void insert()
+void insert() //funtion defination
 {
-    if ((front==0 && rear==max-1)||(front==rear+1))
+    if ((front==0 && rear==max-1)||(front==rear+1)) // condition to check wheather the queue empty or completly full
      printf("\n overflow");
     else
     {
-        if(rear==-1)
+        if(rear==-1) 
         {
             rear=0;
             front=0;
@@ -53,12 +54,12 @@ void insert()
 
 void delete()
 {
-    if(front==-1)
+    if(front==-1) // condition to check wheather the queue is not completely empty
      printf("\n underflow");
     else
     {
         printf("\n deleted element= %d",q[front]);
-        if(front==rear)
+        if(front==rear) 
         {
             front=-1;
             rear=-1;
@@ -73,7 +74,7 @@ void delete()
 void travser()
 {
     int i;
-    if(front==-1)
+    if(front==-1) // condition to check wheather the queue is not completely empty
     printf("\n underflow");
     else
     {   
