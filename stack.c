@@ -1,12 +1,13 @@
+//program to show implementation of stack
 #include<stdio.h>
 #include<process.h>
 #include<conio.h>
 #define max 20
 int top=-1,a[max];
-void push(void);
-void pop(void);
-void peek(void);
-void traverse(void);
+void push(void);//function to add new element
+void pop(void);//function to delete element
+void peek(void);//function to display element at top
+void traverse(void);//function to display all element in stack
 void main()
 {
     int ch;
