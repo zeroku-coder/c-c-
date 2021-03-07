@@ -1,24 +1,25 @@
+//Program to show implementation of linklist and different function on it...
 #include<stdio.h>
 #include<conio.h>
 #include<process.h>
 #include<stdlib.h>
 void create();
-void addfront();
-void addlast();
-void addftpos();
-void addftcons();
-void delfront();
-void dellast();
-void delpos();
-void delcons();
-void traverse();
-int count();
-struct node
+void addfront();//Declaration of function to add element at front of list 
+void addlast();//Declaration of function to add element at the last of list
+void addftpos();//Declaration of function to add element after a given position
+void addftcons();//Declaration of function to add element after a particular constant
+void delfront();//Declaration of function to delete element from front
+void dellast();//Declaration of function to delete element from last
+void delpos();//Declaration of function to delete element from a position
+void delcons();//Declaration of function to delete a particular constant
+void traverse();//Declaration of function to display every element in linklist
+int count();//Declaration of function to count number of element in linklist
+struct node //Structure of a node in linklist
 {
     int info;
     struct node *next;
 };
-struct node *start=NULL;
+struct node *start=NULL;//starting node declared as null
 int main()
 {
     int ch,c;
@@ -71,7 +72,7 @@ int main()
     }
 
 }
-void create()
+void create()//Function to create a node
 {
      struct node *n=(struct node *)malloc(sizeof(struct node*));
      struct node *t=start;
@@ -89,7 +90,7 @@ void create()
      }
      printf("\n node Created");
 }
-void addfront()
+void addfront()//Function to add element at front
 {
     struct node *n=(struct node*)malloc(sizeof(struct node*));
     printf("\n First node createdd ");
@@ -107,7 +108,7 @@ void addfront()
         printf("\n node added at front");
     }
 }
-void addlast()
+void addlast()//Function to add element at last
 {
     struct node *n=(struct node*)malloc(sizeof(struct node*));
     struct node *t=start;
@@ -128,7 +129,7 @@ void addlast()
         printf("\n node created at the end");
     }
 }
-void delfront()
+void delfront()//Function to delete element from front
 {
     struct node *t=start;
     if(start==NULL)
@@ -146,7 +147,7 @@ void delfront()
         printf("\n frist node deleted");
     }
 }
-void dellast()
+void dellast()//Function to delete element at last 
 {
     struct node *t=start;
     if(start==NULL)
@@ -166,7 +167,7 @@ void dellast()
         printf("\n Last node deleted");     
     }
 }
-void traverse()
+void traverse()//Function to display all element in linklist
 {
     struct node *t=start;
     if(start==NULL)
@@ -180,7 +181,7 @@ void traverse()
         printf("\n%d",t->info);
     }    
 }
-int count()
+int count()//Function to count total number of element in link list
 {
     struct node *t=start;
     int c=0;
@@ -191,7 +192,7 @@ int count()
     }
     return c;
 }
-void addftpos()
+void addftpos()//Function to add element after a position
 {
     struct node *n=(struct node*)malloc(sizeof(struct node) );
     struct node *t=start;
@@ -216,7 +217,7 @@ void addftpos()
         printf("\n node inserted after the given position");
     }
 }
-void addftcons()
+void addftcons()//Function to add element after a constant
 {
     struct node *n=(struct node*)malloc(sizeof(struct node));
     struct node *t=start;
@@ -240,7 +241,7 @@ void addftcons()
     if(t=NULL)
          printf("\n invalid number");
 }
-void delpos()
+void delpos()//Function to delete element at particular position
 {
     struct node *t=start,*ptr;
     int ctr=0,pos;
@@ -261,7 +262,7 @@ void delpos()
         printf("\n node deleted");
     }     
 }
-void delcons()
+void delcons()//Function to delete a particular constant
 {
     struct node *t=start,*ptr;
     int cons;
